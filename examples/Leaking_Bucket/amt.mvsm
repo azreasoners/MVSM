@@ -1,0 +1,31 @@
+:-sorts
+  atime;time.
+
+:-objects
+  0..10 :: amount;
+  0..10 :: time;
+  0..9  :: atime.
+
+:-constants
+  amt(time) :: amount;
+  fill(atime) :: boolean.
+
+:-variables
+  T :: time;
+  ST :: atime;
+  X :: amount.
+
+
+{amt(ST+1) = X-1} <- amt(ST) = X.
+
+{fill(ST) = true}.
+{fill(ST) = false}.
+
+amt(ST+1) = X <- fill(ST) = true & X = 10.
+
+<- amt(T) = X & X < 2.
+
+amt(0) = 5.
+
+not not (amt(10) = 8).
+

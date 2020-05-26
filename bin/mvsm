@@ -1,0 +1,1 @@
+mvsmCompiler -a $1 | f2lp | gringo -c maxstep=${3-0} | claspD ${2-1} | as2transition -l
